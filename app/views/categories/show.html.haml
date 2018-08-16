@@ -1,0 +1,13 @@
+- if !flash[:notice].blank?
+  .notice
+    = flash[:notice]
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+%div
+  %h2 Show categories
+  %table
+    %tr
+      %th Category ID
+      %td= @category.id
+    %tr
+      %th Name
+      %td= @category.name

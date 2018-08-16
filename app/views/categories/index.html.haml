@@ -1,0 +1,16 @@
+- if !flash[:notice].blank?
+  .notice
+    = flash[:notice]
+%div
+  %h2 Categories
+  = link_to("Add New Category", {:action => 'new'}, :class => 'action new')
+  %table.listing
+    %tr.header
+      %th Category
+      %th Name
+    - @categories.each do |category|
+      %tr
+        %td.actions
+          = link_to("Show", {:action => 'show', :id => category.id}, :class => 'action show')
+          = link_to("Edit", {:action => 'edit', :id => category.id}, :class => 'action edit')
+          = link_to("Delete", {:action => 'destroy', :id => category.id}, :class => 'action delete')

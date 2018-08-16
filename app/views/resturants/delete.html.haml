@@ -1,0 +1,8 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+%div
+  %h2 Delete Resturant
+  = form_for(:resturant, :url => {:action => 'destroy', :id => @resturant.id}) do |f|
+    %p Are you sure you want to permanently delete this Resturant?
+    %p= @resturant.name
+    .form-buttons
+      = submit_tag("Delete Resturant")

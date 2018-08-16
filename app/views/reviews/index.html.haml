@@ -1,0 +1,19 @@
+- if !flash[:notice].blank?
+  .notice
+    = flash[:notice]
+%div
+  %h2 Reviews
+  = link_to("Add New Review", {:action => 'new'}, :class => 'action new')
+  %table.listing
+    %tr.header
+      %th Review
+      %th Stars
+    - @reviews.each do |review|
+      %tr
+        %td= review.user.email
+        %td= review.review
+        %td= review.stars
+        %td
+          = link_to("Show", resturant_review_path(resturant_id: review.resturant_id, id: review.id), :class => 'action show')
+          = link_to("Edit", edit_resturant_review_path(review.resturant_id, review.id), :class => 'action edit')
+          = link_to("Delete", resturant_review_path(review.resturant_id, review.id), method: :delete, :class => 'action delete')

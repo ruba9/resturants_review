@@ -1,0 +1,14 @@
+%h1.rest_style Resturants list
+= link_to("Add New Resturant", {:action => 'new'},:class => "rest_style")
+%table.rest_style
+  %tr.header
+    %th Resturant name
+    - @resturants.each do |resturant|
+      %tr
+        %td= resturant.name
+        %td= resturant.id
+        %td.actions
+          = link_to("Show", {:action => 'show', :id => resturant.id}, :class => 'action show')
+          = link_to("Edit", {:action => 'edit', :id => resturant.id}, :class => 'action upd')
+          = link_to("Delete", {:action => 'destroy', :id => resturant.id}, :class => 'action delete')
+          = link_to("Reviews", resturant_reviews_path(resturant))

@@ -1,0 +1,14 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.restrant_edit
+  %h2 Update Resturant
+  = form_for(:resturant, method: 'PUT', :url => {:action => 'update', :id => @resturant.id}) do |f|
+    %table{:summary => "Rest form fields"}
+      %tr
+        %th Resturant ID
+        %td
+          - f.label(:id )
+      %tr
+        %th Name
+        %td= f.text_field(:name)
+    .form-buttons
+      = submit_tag("Update Resturant")

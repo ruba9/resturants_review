@@ -1,0 +1,10 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+%div
+  %h2 Create a resturant
+  = form_for(@resturant) do |f|
+    %table{:summary => "Restrant form fields"}
+      %tr
+        %th Name
+        %td= f.text_field(:name)
+    .form-buttons
+      = submit_tag("Create Resturant")

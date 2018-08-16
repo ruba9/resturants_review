@@ -1,0 +1,9 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.container
+  %table.rest_style
+    %tr.rest_style
+      %th Resturant ID
+      %td= @resturant.id
+    %tr.rest_style
+      %th Name
+      %td= @resturant.name

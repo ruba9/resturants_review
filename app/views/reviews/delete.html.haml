@@ -1,0 +1,8 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+%div
+  %h2 Delete Review
+  = form_for(:resturant_user_reviews, :url => {:action => 'destroy', :id => @resturant_user_reviews.id}) do |f|
+    %p Are you sure you want to permanently delete this review?
+    %p= @resturant_user_reviews.review
+    .form-buttons
+      = submit_tag("Delete Review")

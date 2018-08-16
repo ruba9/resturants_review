@@ -1,0 +1,13 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+%div
+  %h2 Update Review
+  = form_for(:review, :url => {:action => 'update', :id => @review.id}, method: :put) do |f|
+    %table{:summary => "Review form fields"}
+      %tr
+        %th Review
+        %td= f.text_field(:review)
+      %tr
+        %th Stars
+        %td= f.text_field(:stars)
+    .form-buttons
+      = f.submit("Update review")

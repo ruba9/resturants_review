@@ -1,0 +1,13 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.Cateory.edit
+  %h2 Update Category
+  = form_for(:category, :url => {:action => 'update', :id => @category.id}) do |f|
+    %table{:summary => "Page form fields"}
+      %tr
+        %th Category ID
+        %td= f.text_field(:category_id)
+      %tr
+        %th Name
+        %td= f.text_field(:name)
+    .form-buttons
+      = submit_tag("Update category")

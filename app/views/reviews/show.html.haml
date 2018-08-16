@@ -1,0 +1,20 @@
+- if !flash[:notice].blank?
+  .notice
+    = flash[:notice]
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+%div
+  %h2 Show Reviews
+  %table
+    %tr
+      %th Review ID
+      %td= @review.id
+    %tr
+      %th Name
+      %td= @review.user.email
+    %tr
+      %th Review
+      %td= @review.review
+    %tr
+      %th Stars
+      %td= @review.stars
+    %tr

@@ -1,0 +1,13 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+%div
+  %h2 Create a review
+  = form_for([@resturant, @review], :url => {:action => 'create'}) do |f|
+    %table
+      %tr
+        %th Review
+        %td= f.text_field(:review)
+      %tr
+        %th Stars
+        %td= f.text_field(:stars)
+    .form-buttons
+      = f.submit("Add a Review")

@@ -1,0 +1,13 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+%div
+  %h2 Create Category
+  = form_for(:page, :url => {:action => 'create'}) do |f|
+    %table
+      %tr
+        %th Category ID
+        %td= f.text_field(:category_id)
+      %tr
+        %th Name
+        %td= f.text_field(:name)
+    .form-buttons
+      = submit_tag("Create Category")
